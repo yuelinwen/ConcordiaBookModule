@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Register your account</title>
+</head>
+
+<body>
+  <h2>Create your account</h2>
+  {% if messages %}
+  {% for message in messages %}
+  <p style="color:red;">{{ message }}</p>
+  {% endfor %}
+  {% endif %}
+  <form method="POST">
+    {% csrf_token %}
+    <label>Username: </label>
+    <input type="text" name="username" required><br>
+    <label>Concordia Student Id: </label>
+    <input type="text" name="student_id" required><br>
+    <label>Password: </label>
+    <input type="password" name="password" required><br>
+    <button type="submit">Submit</button>
+  </form>
+  <h2>Do you already have an account?</h2>
+  <form action="{% url 'login' %}" method="GET">
+    <button type="submit">Login</button>
+  </form>
+</body>
+
+</html>
