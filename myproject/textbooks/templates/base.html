@@ -1,13 +1,25 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Concordia Book Module</title>
+    <title>ConcordiaBook</title>
+    <link rel="icon" type="image/png" href="{% static 'images/concordia-logo.png' %}">
 </head>
+
 <body>
-    <h1>Hello, {{ username }}! Welcome to Concordia Book Market</h1>
-    {% block content %}
-    {% endblock %}
+    <header style="display:flex;align-items:center;gap:12px;">
+        <img src="{% static 'images/concordia-logo.png' %}" alt="Concordia logo" style="height:48px;">
+        <h1>ConcordiaBook Market</h1>
+    </header>
+    {% include "textbooks/search_form.html" %}
+    {% include "textbooks/list.html" %}
+    {% include "textbooks/add_form.html" %}
 </body>
+<footer>
+    <p>&copy; 2025 Created by Yuelin Wen@Concordia Meng Electrial Computer Eng. All rights reserved.</p>
+</footer>
+
 </html>

@@ -1,10 +1,7 @@
-{% extends "base.html" %}
-
-{% block content %}
-<h1>Textbook List</h1>
+<h2>Textbook List</h2>
 <ul>
     {% for textbook in all_textbooks %}
     <li>{{ textbook }}</li>
     {% endfor %}
 </ul>
-{% endblock %}
+

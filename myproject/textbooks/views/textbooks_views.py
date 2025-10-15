@@ -2,7 +2,7 @@ from django.views.generic import ListView
 from django.shortcuts import redirect
 
 class TextbookListView(ListView):
-    template_name = 'textbooks/list.html'
+    template_name = 'base.html'
     context_object_name = 'all_textbooks'
 
     def dispatch(self, request, *args, **kwargs):
