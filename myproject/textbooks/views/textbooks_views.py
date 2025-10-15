@@ -12,3 +12,8 @@ class TextbookListView(ListView):
 
     def get_queryset(self):
         return ['textbook1', 'textbook2', 'textbook3']
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['username'] = self.request.session.get('username')
+        return context
