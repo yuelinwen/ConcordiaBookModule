@@ -1,6 +1,7 @@
-<form class="col d-flex w-100 w-md-auto justify-content-center" role="search" method="get">
-    <input id="textbooks-search-input" class="form-control me-2" type="search" name="q" placeholder="Search course code"
+<form class="col d-flex w-100 w-md-auto justify-content-center" role="search" method="get" action="">
+    <input id="textbooks-search-input" class="form-control me-2" type="search" name="courseCode" placeholder="Search course code"
         aria-label="Search" style="min-width: 200px; max-width: 400px;"
         value="{{ request.GET.q|default_if_none:'' }}" />
+    <input type="hidden" name="availability" value="true">
     <button class="btn btn-outline-primary" type="submit">Search</button>
 </form>

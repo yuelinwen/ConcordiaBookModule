@@ -1,6 +1,36 @@
-<h2>Add Textbook</h2>
+<h2 class="text-center mb-4">Add Your Textbook</h2>
 <form method="POST">
     {% csrf_token %}
-    <input type="text" name="book_title" placeholder="Enter book name">
-    <button class="btn btn-outline-primary" type="submit">Add</button>
+    <div class="mb-3">
+        <label for="title" class="form-label">Title</label>
+        <input type="text" class="form-control" id="title" name="title" placeholder="Enter book title" required>
+    </div>
+
+    <div class="mb-3">
+        <label for="year" class="form-label">Year</label>
+        <input type="number" class="form-control" id="year" name="year" placeholder="Enter year" required>
+    </div>
+
+    <div class="mb-3">
+        <label for="edition" class="form-label">Edition</label>
+        <input type="text" class="form-control" id="edition" name="edition" placeholder="Enter edition">
+    </div>
+
+    <div class="mb-3">
+        <label for="author" class="form-label">Author</label>
+        <input type="text" class="form-control" id="author" name="author" placeholder="Enter author" required>
+    </div>
+
+    <div class="mb-3">
+        <label for="course_code" class="form-label">Course Code</label>
+        <input type="text" class="form-control" id="course_code" name="course_code" placeholder="Enter course code"
+            required>
+    </div>
+
+    <div class="mb-3">
+        <label for="condition" class="form-label">Condition</label>
+        <input type="text" class="form-control" id="condition" name="condition" placeholder="Enter condition" required>
+    </div>
+
+    <button type="submit" class="btn btn-primary w-100">Add Book</button>
 </form>
