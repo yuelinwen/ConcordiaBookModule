@@ -1,36 +1,65 @@
-<h2 class="text-center mb-4">Add Your Textbook</h2>
-<form method="POST">
+<h5 class="text-center mb-4">Add Textbook</h5>
+
+{% if messages %}
+{% for message in messages %}
+<div class="alert {% if message.tags %}alert-{{ message.tags }}{% endif %}" role="alert">
+    {{ message }}
+</div>
+{% endfor %}
+{% endif %}
+
+<form method="post" action="{% url 'add_book' %}">
     {% csrf_token %}
+    <!-- Title -->
     <div class="mb-3">
         <label for="title" class="form-label">Title</label>
-        <input type="text" class="form-control" id="title" name="title" placeholder="Enter book title" required>
+        <input type="text" class="form-control" id="title" name="title" placeholder="Enter book title" required
+            maxlength="200">
     </div>
 
+    <!-- Year -->
     <div class="mb-3">
         <label for="year" class="form-label">Year</label>
-        <input type="number" class="form-control" id="year" name="year" placeholder="Enter year" required>
+        <select class="form-select" id="year" name="year" required>
+            <option selected disabled>Select Year</option>
+            {% for y in year_range %}
+            <option value="{{ y }}">{{ y }}</option>
+            {% endfor %}
+        </select>
     </div>
 
+    <!-- Edition (optional) -->
     <div class="mb-3">
         <label for="edition" class="form-label">Edition</label>
-        <input type="text" class="form-control" id="edition" name="edition" placeholder="Enter edition">
+        <input type="text" class="form-control" id="edition" name="edition" placeholder="Enter edition (optional)"
+            maxlength="50">
     </div>
 
+    <!-- Author -->
     <div class="mb-3">
         <label for="author" class="form-label">Author</label>
-        <input type="text" class="form-control" id="author" name="author" placeholder="Enter author" required>
+        <input type="text" class="form-control" id="author" name="author" placeholder="Enter author" required
+            maxlength="100">
     </div>
 
+    <!-- Course Code -->
     <div class="mb-3">
         <label for="course_code" class="form-label">Course Code</label>
         <input type="text" class="form-control" id="course_code" name="course_code" placeholder="Enter course code"
-            required>
+            required maxlength="20">
     </div>
 
+    <!-- Condition -->
     <div class="mb-3">
         <label for="condition" class="form-label">Condition</label>
-        <input type="text" class="form-control" id="condition" name="condition" placeholder="Enter condition" required>
+        <select class="form-select" id="condition" name="condition" required>
+            <option value="new">New</option>
+            <option value="good">Good</option>
+            <option value="fair">Fair</option>
+            <option value="bad">Bad</option>
+        </select>
     </div>
 
+    <!-- Submit -->
     <button type="submit" class="btn btn-primary w-100">Add Book</button>
 </form>
