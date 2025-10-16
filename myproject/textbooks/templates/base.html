@@ -15,48 +15,47 @@
 <body>
     <header class="bg-body-tertiary py-2">
         <nav class="container-fluid d-flex flex-column flex-md-row align-items-center justify-content-between">
-            <a class="btn btn-outline-light d-flex flex-row align-items-center mb-2 mb-md-0" style="gap: 12px;"
+            <a class="col btn btn-outline-light d-flex flex-row align-items-center mb-2 mb-md-0" style="gap: 12px;"
                 href="/">
                 <img src="{% static 'images/concordia-logo.png' %}" alt="Concordia logo" style="height:48px;">
                 <h1 class="m-0" style="color: black; font-size: 1.5rem;">ConcordiaBook Market</h1>
             </a>
 
-            <form class="d-flex w-100 w-md-auto justify-content-center" role="search" method="POST">
+            <form class="col d-flex w-100 w-md-auto justify-content-center" role="search" method="POST">
                 {% csrf_token %}
                 <input class="form-control me-2" type="search" placeholder="Search Bookname or Coursecode"
                     aria-label="Search" style="min-width: 200px; max-width: 400px;" />
-                <button class="btn btn-outline-success" type="submit">Search</button>
+                <button class="btn btn-outline-primary" type="submit">Search</button>
             </form>
 
-            <div class="mb-0 text-center text-md-start ms-md-3 d-flex align-items-center gap-3">
+            <div class="mb-0 col text-center text-md-start py-4 py-md-0 d-flex align-items-center gap-3">
                 Hello, {{ username }}
                 <a class="btn btn-outline-dark" href="{% url 'logout' %}">Logout</a>
             </div>
+
         </nav>
         <hr style="border: 1px solid #ccc; width: 100%;">
     </header>
 
-    <div class="main-container">
-        <div class="sidebar">
-            {% include "textbooks/add_form.html" %}
-            {% include "textbooks/filter_form.html" %}
+    <div class="main-container d-flex flex-column flex-md-row  px-2">
+        <div class="col-md-2 d-flex flex-column align-items-center">
+            <div>
+                {% include "textbooks/add_form.html" %}
+            </div>
+            <div class="pt-4">
+                {% include "textbooks/filter_form.html" %}
+            </div>
         </div>
-        <div class="list-container">
+
+        <div class="col-md-6 pt-5 pt-md-0">
             {% include "textbooks/list.html" %}
         </div>
     </div>
+
+    <footer style="text-align: center; margin-top: 20px; color: grey;">
+        <p>&copy; 2025 Created by Yuelin Wen@Concordia Meng Electrial Computer Eng. All rights reserved.</p>
+    </footer>
+
 </body>
-<footer style="text-align: center; margin-top: 20px; color: grey;">
-    <p>&copy; 2025 Created by Yuelin Wen@Concordia Meng Electrial Computer Eng. All rights reserved.</p>
-</footer>
 
 </html>
-
-<style>
-    body {
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-        width: 100vw;
-    }
-</style>

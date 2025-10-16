@@ -1,6 +1,9 @@
 from django.views.generic import ListView
 from django.shortcuts import redirect
 
+# Import the Book model so get_queryset can return real objects
+from textbooks.models.book import Book
+
 class TextbookListView(ListView):
     template_name = 'base.html'
     context_object_name = 'all_textbooks'
@@ -11,7 +14,7 @@ class TextbookListView(ListView):
         return super().dispatch(request, *args, **kwargs)
 
     def get_queryset(self):
-        return ['textbook1', 'textbook2', 'textbook3']
+        return Book.objects.all()
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)

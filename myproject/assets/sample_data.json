@@ -1,0 +1,262 @@
+[
+  {
+    "model": "textbooks.book",
+    "pk": 1,
+    "fields": {
+      "title": "Intro to Programming",
+      "year": 2021,
+      "edition": "1st",
+      "author": "Alice Smith",
+      "course_code": "CS101",
+      "condition": "good",
+      "availability_status": true
+    }
+  },
+  {
+    "model": "textbooks.book",
+    "pk": 2,
+    "fields": {
+      "title": "Advanced Algorithms",
+      "year": 2020,
+      "edition": "2nd",
+      "author": "Bob Johnson",
+      "course_code": "CS101",
+      "condition": "used",
+      "availability_status": true
+    }
+  },
+  {
+    "model": "textbooks.book",
+    "pk": 3,
+    "fields": {
+      "title": "Database Systems",
+      "year": 2019,
+      "edition": "3rd",
+      "author": "Charlie Lee",
+      "course_code": "CS102",
+      "condition": "like new",
+      "availability_status": true
+    }
+  },
+  {
+    "model": "textbooks.book",
+    "pk": 4,
+    "fields": {
+      "title": "Operating Systems",
+      "year": 2018,
+      "edition": null,
+      "author": "David Kim",
+      "course_code": "CS102",
+      "condition": "good",
+      "availability_status": true
+    }
+  },
+  {
+    "model": "textbooks.book",
+    "pk": 5,
+    "fields": {
+      "title": "Computer Networks",
+      "year": 2022,
+      "edition": "2nd",
+      "author": "Emma Brown",
+      "course_code": "CS103",
+      "condition": "worn",
+      "availability_status": true
+    }
+  },
+  {
+    "model": "textbooks.book",
+    "pk": 6,
+    "fields": {
+      "title": "Artificial Intelligence",
+      "year": 2023,
+      "edition": "1st",
+      "author": "Frank White",
+      "course_code": "CS103",
+      "condition": "like new",
+      "availability_status": true
+    }
+  },
+  {
+    "model": "textbooks.book",
+    "pk": 7,
+    "fields": {
+      "title": "Machine Learning",
+      "year": 2020,
+      "edition": "3rd",
+      "author": "Grace Green",
+      "course_code": "CS104",
+      "condition": "used",
+      "availability_status": true
+    }
+  },
+  {
+    "model": "textbooks.book",
+    "pk": 8,
+    "fields": {
+      "title": "Software Engineering",
+      "year": 2019,
+      "edition": "4th",
+      "author": "Henry Adams",
+      "course_code": "CS104",
+      "condition": "good",
+      "availability_status": true
+    }
+  },
+  {
+    "model": "textbooks.book",
+    "pk": 9,
+    "fields": {
+      "title": "Data Structures",
+      "year": 2021,
+      "edition": "1st",
+      "author": "Alice Smith",
+      "course_code": "CS105",
+      "condition": "like new",
+      "availability_status": true
+    }
+  },
+  {
+    "model": "textbooks.book",
+    "pk": 10,
+    "fields": {
+      "title": "Web Development",
+      "year": 2022,
+      "edition": "2nd",
+      "author": "Bob Johnson",
+      "course_code": "CS105",
+      "condition": "used",
+      "availability_status": true
+    }
+  },
+  {
+    "model": "textbooks.book",
+    "pk": 11,
+    "fields": {
+      "title": "Intro to Programming",
+      "year": 2018,
+      "edition": "3rd",
+      "author": "Charlie Lee",
+      "course_code": "CS101",
+      "condition": "good",
+      "availability_status": true
+    }
+  },
+  {
+    "model": "textbooks.book",
+    "pk": 12,
+    "fields": {
+      "title": "Advanced Algorithms",
+      "year": 2017,
+      "edition": null,
+      "author": "David Kim",
+      "course_code": "CS101",
+      "condition": "worn",
+      "availability_status": true
+    }
+  },
+  {
+    "model": "textbooks.book",
+    "pk": 13,
+    "fields": {
+      "title": "Database Systems",
+      "year": 2020,
+      "edition": "1st",
+      "author": "Emma Brown",
+      "course_code": "CS102",
+      "condition": "like new",
+      "availability_status": true
+    }
+  },
+  {
+    "model": "textbooks.book",
+    "pk": 14,
+    "fields": {
+      "title": "Operating Systems",
+      "year": 2019,
+      "edition": "2nd",
+      "author": "Frank White",
+      "course_code": "CS102",
+      "condition": "used",
+      "availability_status": true
+    }
+  },
+  {
+    "model": "textbooks.book",
+    "pk": 15,
+    "fields": {
+      "title": "Computer Networks",
+      "year": 2021,
+      "edition": "3rd",
+      "author": "Grace Green",
+      "course_code": "CS103",
+      "condition": "good",
+      "availability_status": true
+    }
+  },
+  {
+    "model": "textbooks.book",
+    "pk": 16,
+    "fields": {
+      "title": "Artificial Intelligence",
+      "year": 2022,
+      "edition": null,
+      "author": "Henry Adams",
+      "course_code": "CS103",
+      "condition": "like new",
+      "availability_status": true
+    }
+  },
+  {
+    "model": "textbooks.book",
+    "pk": 17,
+    "fields": {
+      "title": "Machine Learning",
+      "year": 2023,
+      "edition": "4th",
+      "author": "Alice Smith",
+      "course_code": "CS104",
+      "condition": "used",
+      "availability_status": true
+    }
+  },
+  {
+    "model": "textbooks.book",
+    "pk": 18,
+    "fields": {
+      "title": "Software Engineering",
+      "year": 2020,
+      "edition": "1st",
+      "author": "Bob Johnson",
+      "course_code": "CS104",
+      "condition": "good",
+      "availability_status": true
+    }
+  },
+  {
+    "model": "textbooks.book",
+    "pk": 19,
+    "fields": {
+      "title": "Data Structures",
+      "year": 2019,
+      "edition": "2nd",
+      "author": "Charlie Lee",
+      "course_code": "CS105",
+      "condition": "worn",
+      "availability_status": true
+    }
+  },
+  {
+    "model": "textbooks.book",
+    "pk": 20,
+    "fields": {
+      "title": "Web Development",
+      "year": 2021,
+      "edition": "3rd",
+      "author": "David Kim",
+      "course_code": "CS105",
+      "condition": "like new",
+      "availability_status": true
+    }
+  }
+]

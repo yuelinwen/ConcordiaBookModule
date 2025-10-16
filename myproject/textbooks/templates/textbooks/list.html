@@ -1,7 +1,24 @@
-<h2>Textbook List</h2>
-<ul>
-    {% for textbook in all_textbooks %}
-    <li>{{ textbook }}</li>
-    {% endfor %}
-</ul>
+{% if all_textbooks %}
 
+<div class="list-group">
+    {% for textbook in all_textbooks %}
+
+
+    <div class="list-group-item">
+        <div class="d-flex justify-content-between">
+            <h3 class="card-title mb-1">{{ textbook.title }}</h3>
+        </div>
+        <p class="mb-1 text-wrap">Some placeholder content in a paragraph.</p>
+        <p class="mb-1 text-wrap">Author: {{ textbook.author }}</p>
+        <p class="mb-1 text-wrap">Year: {{ textbook.year }} {% if textbook.edition %}· Edition: {{ textbook.edition }}{% endif %}</p>
+        <p class="mb-1 text-wrap">Course code: {{ textbook.course_code }}</p>
+        <p class="mb-1 text-wrap">Condition: {{ textbook.condition }}</p>
+        <p class="mb-1 text-wrap">Availability: <span class="{% if textbook.availability_status %}text-success{% else %}text-danger{% endif %}">{% if textbook.availability_status %}Available{% else %}Not available{% endif %}</span></p>
+    </div>
+    {% endfor %}
+
+</div>
+
+{% else %}
+<p>No textbooks found.</p>
+{% endif %}
