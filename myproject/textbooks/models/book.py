@@ -9,8 +9,6 @@ class Book(models.Model):
     condition = models.CharField(max_length=50, default='good')   
     availability_status = models.BooleanField(default=True)       
 
-    # python manage.py makemigrations
-    # python manage.py migrate
     def __str__(self):
         return self.title
 

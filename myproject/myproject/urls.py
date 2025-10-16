@@ -17,6 +17,8 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 from django.views.generic import RedirectView
+from django.conf.urls import handler404
+from . import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -28,3 +30,5 @@ urlpatterns = [
     # redirect user to main page
     path('', RedirectView.as_view(url='/textbooks/', permanent=False)),
 ]
+
+handler404 = views.custom_404
