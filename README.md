@@ -17,6 +17,17 @@ ConcordiaBook is a web/mobile application for students to trade textbooks they n
 - [@Yuelin Wen](https://github.com/yuelinwen)
 - Email: wenyuelinca@gmail.com
 
+## 📌 API Routes
+
+| Description                     | Method | Endpoint                                      |
+|----------------------------------|--------|-----------------------------------------------|
+| Admin                            | GET    | /admin                                       |
+| Login                            | POST   | /auth/login                                  |
+| Register                         | POST   | /auth/register                               |
+| Logout                           | POST   | /auth/logout                                 |
+| List textbooks                   | GET    | /textbooks                                   |
+| Filter textbooks by course code  | GET    | /textbooks/?courseCode&availability=true     |
+| Add new textbook                 | POST   | /textbooks/add                               |
 
 
 ## 🚀 Getting Started
