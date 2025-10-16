@@ -42,7 +42,9 @@
         </div>
     </div>
 
-    <footer style="text-align: center; margin-top: 20px; color: grey;">
+    <div id="liveAlertPlaceholder" class="position-fixed top-0 end-0 p-3" style="z-index: 1060;"></div>
+
+    <footer style="text-align: center; margin-top: 20px; color: grey; height: 30vh;" class="pt-5">
         <p>&copy; 2025 Created by Yuelin Wen@Concordia Meng Electrial Computer Eng. All rights reserved.</p>
     </footer>
 
@@ -66,4 +68,28 @@
             console.error('Search-clear script error', e);
         }
     });
+
+    const alertPlaceholder = document.getElementById('liveAlertPlaceholder')
+
+    const appendAlert = (message, type = 'success') => {
+        const wrapper = document.createElement('div')
+        wrapper.innerHTML = [
+            `<div class="alert alert-${type} alert-dismissible fade show" role="alert">`,
+            `   <div>${message}</div>`,
+            '   <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>',
+            '</div>'
+        ].join('')
+
+        alertPlaceholder.append(wrapper)
+        setTimeout(() => {
+            try { bootstrap.Alert.getOrCreateInstance(wrapper.querySelector('.alert')).close(); } catch (e) { wrapper.remove(); }
+        }, 3000)
+    }
+
+    document.addEventListener('click', function (e) {
+        const btn = e.target.closest && e.target.closest('.exchange-btn')
+        if (!btn) return
+        const title = btn.getAttribute('data-title') || 'the book'
+        appendAlert(`Added "${title}" to the exchange queue.`, 'success')
+    })
 </script>

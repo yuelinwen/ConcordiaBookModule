@@ -3,7 +3,7 @@
 <div class="list-group">
     {% for textbook in all_textbooks %}
 
-
+    {# single global placeholder is in base.html; don't render per-item placeholders #}
     <div class="list-group-item">
         <div class="d-flex justify-content-between">
             <h3 class="card-title mb-1">{{ textbook.title }}</h3>
@@ -15,15 +15,22 @@
             <p class="mb-1 text-wrap">Condition: {{ textbook.condition }}</p>
             <p class="mb-1 text-wrap">Availability: <span class="{% if textbook.availability_status %}text-success{% else %}text-danger{% endif %}">{% if textbook.availability_status %}Available{% else %}Not available{% endif %}</span></p>
         </div>
-        {% if textbook.availability_status %} <button type="button" class="btn btn-outline-primary">Exchange</button>{% else %}{% endif %}
+        {% if textbook.availability_status %}
+            <button type="button" class="btn btn-outline-primary exchange-btn" data-title="{{ textbook.title|escape }}">Exchange</button>
+        {% else %}
+        {% endif %}
         <br />
+        
     </div>
     {% endfor %}
 </div>
 
 {% else %}
-{% load static %}
-<div class="text-center">
-    <h5 class="mt-3">No textbooks found.</h5>
+<div>
+    <p>
+        No textbooks found.
+    </p>
+
+
 </div>
 {% endif %}
