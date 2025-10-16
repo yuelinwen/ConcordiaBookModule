@@ -14,7 +14,7 @@
 
 <body>
     <header class="bg-body-tertiary py-2">
-        <nav class="container-fluid d-flex flex-column flex-md-row align-items-center justify-content-between">
+        <nav class="container-fluid d-flex flex-column flex-md-row align-items-center justify-content-between gap-5">
             <a class="col btn btn-outline-light d-flex flex-row align-items-center mb-2 mb-md-0" style="gap: 12px;"
                 href="/">
                 <img src="{% static 'images/concordia-logo.png' %}" alt="Concordia logo" style="height:48px;">
@@ -83,7 +83,7 @@
         alertPlaceholder.append(wrapper)
         setTimeout(() => {
             try { bootstrap.Alert.getOrCreateInstance(wrapper.querySelector('.alert')).close(); } catch (e) { wrapper.remove(); }
-        }, 3000)
+        }, 2000)
     }
 
     document.addEventListener('click', function (e) {
