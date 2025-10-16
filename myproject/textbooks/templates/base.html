@@ -21,12 +21,7 @@
                 <h1 class="m-0" style="color: black; font-size: 1.5rem;">ConcordiaBook Market</h1>
             </a>
 
-            <form class="col d-flex w-100 w-md-auto justify-content-center" role="search" method="POST">
-                {% csrf_token %}
-                <input class="form-control me-2" type="search" placeholder="Search Bookname or Coursecode"
-                    aria-label="Search" style="min-width: 200px; max-width: 400px;" />
-                <button class="btn btn-outline-primary" type="submit">Search</button>
-            </form>
+            {% include "textbooks/search_form.html" %}
 
             <div class="mb-0 col text-center text-md-start py-4 py-md-0 d-flex align-items-center gap-3">
                 Hello, {{ username }}
@@ -59,3 +54,21 @@
 </body>
 
 </html>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        const popoverTriggerList = document.querySelectorAll('[data-bs-toggle="popover"]')
+        const popoverList = [...popoverTriggerList].map(el => new bootstrap.Popover(el))
+    })
+
+    document.addEventListener('DOMContentLoaded', function () {
+        try {
+            var input = document.getElementById('textbooks-search-input');
+            if (input && input.value && input.value.trim() !== '') {
+                setTimeout(function () { input.value = ''; }, 50);
+            }
+        } catch (e) {
+            console.error('Search-clear script error', e);
+        }
+    });
+</script>

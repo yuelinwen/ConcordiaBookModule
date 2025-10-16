@@ -16,11 +16,15 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
+from django.views.generic import RedirectView
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', include('textbooks.urls')),
+    path('textbooks/', include('textbooks.urls')),
 
     # authentication
     path('auth/', include('student.urls')),
+
+    # redirect user to main page
+    path('', RedirectView.as_view(url='/textbooks/', permanent=False)),
 ]
