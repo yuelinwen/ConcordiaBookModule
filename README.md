@@ -3,6 +3,8 @@
 
 ConcordiaBook is a web/mobile application for students to trade textbooks they no longer use for textbooks they need. This web application built with [Django](https://www.djangoproject.com/).  
 
+Please use command `pip install -r requirements.txt` under /myproject to install all required dependencies before start this project.
+
 ## 🛠️ Tech Stack
 
 - Python 3.10+
